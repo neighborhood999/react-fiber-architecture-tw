@@ -162,7 +162,7 @@ Child Fiber 表示一個 singly-linked list，它的 head 是第一個 child。�
 
 Return Fiber 是指 program 處理完目前 Fiber 後應該回傳的 Fiber。它的概念上像是 stack frame 回傳 address。也可以認為是 parent Fiber。
 
-如果 Fiber 有多個 child Fiber，每個 child Fiber 的 return Fiber 就是 parent Fiber。因此在我們前一個章節的範例中，`Child` 和 `Child2` 的 return Fiber 是 `Parent。
+如果 Fiber 有多個 child Fiber，每個 child Fiber 的 return Fiber 就是 parent Fiber。因此在我們前一個章節的範例中，`Child` 和 `Child2` 的 return Fiber 是 `Parent`。
 ### `pendingProps` 和 `memoizedProps`
 
 概念上來說，props 是 function 的 argument。`pendingProps` 是 fiber 開始執行時的 set，而 `memoizedProps` 則是 Fiber 執行結束後的 set。
