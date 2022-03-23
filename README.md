@@ -44,7 +44,7 @@ Reconciliation 是一個通常被大家稱為「Virtual DOM」背後的演算法
 
 DOM 只是 React 可以 render 的環境之一，其他主要是透過 React Native render 到 native iOS 和 Android view。（這也是為什麼「Virtual DOM」有點用詞不當的原因）
 
-它可以支援這麼多 target 原因是 React 被設計為 reconciliation 和 reder 是獨立的階段。Reconciler 完成計算 tree 的哪些部分已經被改變的工作；Renderer 使用該實際的資訊來更新整個應用程式。
+它可以支援這麼多 target 原因是 React 被設計為 reconciliation 和 render 是獨立的階段。Reconciler 完成計算 tree 的哪些部分已經被改變的工作；Renderer 使用該實際的資訊來更新整個應用程式。
 
 這種分離代表 React DOM 和 React Native 可以使用它們本身的 renderer 同時共享由 React core 所提供的相同 reconciler。
 
