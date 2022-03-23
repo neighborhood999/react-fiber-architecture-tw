@@ -172,7 +172,7 @@ Return Fiber 是指 program 處理完目前 Fiber 後應該回傳的 Fiber。它
 
 數字說明了 Fiber 的工作優先順序。[ReactPriorityLevel](https://github.com/facebook/react/blob/master/src/renderers/shared/fiber/ReactPriorityLevel.js) module 列出了不同的優先順序以及其代表的含義。
 
-除了例外的 `NoWork` 是 0 之外，越大的數字說明了是越低的優先權。例如，你可以使用以下 functin 來檢查 Fiber 的優先級是否至少與給定級別一樣高：
+除了例外的 `NoWork` 是 0 之外，越大的數字說明了是越低的優先權。例如，你可以使用以下 function 來檢查 Fiber 的優先級是否至少與給定級別一樣高：
 
 ```js
 function matchesPriority(fiber, priority) {
