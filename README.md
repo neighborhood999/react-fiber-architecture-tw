@@ -40,7 +40,7 @@ Reconciliation 是一個通常被大家稱為「Virtual DOM」背後的演算法
 
 -   假設不同的 component type 會 generate 實質上不同的 tree。React 不會嘗試去區分它們，而是完全替換舊的 tree。
 -   列表（List）的區分是使用 key。Key 應該是「穩定、可預測而且唯一的。」
-### Reconciliation versus rendering
+### Reconciliation 與 rendering
 
 DOM 只是 React 可以 render 的環境之一，其他主要是透過 React Native render 到 native iOS 和 Android view。（這也是為什麼「Virtual DOM」有點用詞不當的原因）
 
@@ -52,7 +52,7 @@ Fiber 重新實作了 reconciler。雖然 renderer 將需要更改並支援（�
 ### Scheduling
 
 - **_scheduling_** - 確定何時應執行工作的 process。
-- **_work_** - 必須執行的任何計算。工作通常是更新的結果（例如 `setState` ）。
+- **_work_** - 必須執行的任何計算。工作通常是更新的結果（例如 `setState`）。
 
 React 的 [Design Principles](https://facebook.github.io/react/contributing/design-principles.html#scheduling) 文件在這個主題上非常出色，我在這裡引用一下：
 
@@ -68,7 +68,7 @@ React 的 [Design Principles](https://facebook.github.io/react/contributing/desi
 
 -   在 UI 中，不必立即 apply 每個更新。實際上，這樣做可能是浪費的，導致 frame 下降並降低使用者體驗。
 -   不同 type 的更新具有不同的優先等級 - 一個 animation 更新需要比一個資料儲存的更新更快的完成。
--   一個基於 push 的方法要求應用程式（你，程式開發人員）來決定如何 scheduling 工作。一個基於 pull 的方法允許框架（React）變得聰明，為您做出決定。
+-   一個基於 push 的方法要求應用程式（你，程式開發人員）來決定如何 scheduling 工作。一個基於 pull 的方法允許框架（React）變得聰明，為你做出決定。
 
 目前 React 並沒有充分利用 schedule 的優勢。在一個 subtree 中，一個更新結果導致立即 re-render 整個 subtree。React 的核心演算法利用 scheduling 是 Fiber 背後的驅動想法。
 
